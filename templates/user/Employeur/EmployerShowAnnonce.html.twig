@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Oficiona</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- External Css -->
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css" />
+    <link rel="stylesheet" href="assets/css/et-line.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/css/plyr.css" />
+    <link rel="stylesheet" href="assets/css/flag.css" />
+    <link rel="stylesheet" href="assets/css/slick.css" /> 
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.nstSlider.min.css" />
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CRoboto:300i,400,500" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icon-114x114.png">
+
+
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+
+  <header class="header-2">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="header-top">
+                    <div class="logo-area">
+                        <a href="home"><img src="{{ asset('build/final/images/logo-2.png') }}" alt=""></a>
+                    </div>
+                    <div class="header-top-toggler">
+                        <div class="header-top-toggler-button"></div>
+                    </div>
+                    <div class="top-nav">
+                        <div class="dropdown header-top-account">
+                            <a href="#" class="account-button">Mon compte</a>
+                            <div class="account-card">
+                                <div class="header-top-account-info">
+                                    <a href="#" class="account-thumb">
+                                        <img src="{{ asset("build/final/images/account/thumb-1.jpg") }}" class="img-fluid" alt="">
+                                    </a>
+                                    <div class="account-body">
+                                        <h5><a href="#">{{ app.user.firstname}} {{ app.user.lastname }}</a></h5>
+                                        <span class="mail">{{ app.user.email }}</span>
+                                    </div>
+                                </div>
+                                <ul class="account-item-list">
+                                    <li><a href="#"><span class="ti-user"></span>Compte</a></li>
+                                    <li><a href="{{ path('app_logout') }}"><span class="ti-power-off"></span>Déconnexion</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-expand-lg cp-nav-2">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="menu-item active"><a title="Home" href="home-1.html">Accueil</a></li>
+                            <li class="menu-item dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Offres de travail</a>
+                                <ul  class="dropdown-menu">
+                                    <li class="menu-item"><a  href="job-listing.html">Recherche annonces</a></li>
+
+                                    <li class="menu-item"><a  href="post-job.html">Publier offre</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item dropdown">
+                                <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Employeur</a>
+                                <ul  class="dropdown-menu">
+                                    <li class="menu-item"><a  href="/Employeur/ModifierSociete">Modifier Société</a></li>
+                                </ul>
+                            </li>
+
+
+
+                            <li class="menu-item dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard</a>
+                                <ul class="dropdown-menu">
+                              
+                                    <li class="menu-item"><a  href="/Employeur/modifier">Modifier Profile</a></li>
+                                    <li class="menu-item"><a  href="/Employeur/ModifierSociete">Modifier Societe</a></li>
+                                    <li class="menu-item"><a  href="/Employeur/Societe">Societe</a></li>
+                                    <li class="menu-item"><a  href="/Employeur/GererEmploi">Mes annonces</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item dropdown">
+                                <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                <ul  class="dropdown-menu">
+                                    <li class="menu-item"><a href="about-us.html">À propos de nous</a></li>
+                                    <li class="menu-item"><a href="how-it-work.html">Comment ça fonctionne</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item post-job"><a href="/Employeur/PublierOffre"><i class="fas fa-plus"></i>Publiez offre de travail</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Breadcrumb -->
+    <div class="alice-bg padding-top-70 padding-bottom-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="breadcrumb-area">
+              <h1>Liste des offres</h1>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">ACCEUIL</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Liste des offres</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="breadcrumb-form">
+              <form action="#">
+                <input type="text" placeholder="entrer mot clés">
+                <button><i data-feather="search"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Job Listing -->
+    <div class="alice-bg section-padding-bottom">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col">
+            <div class="employer-container">
+              <div class="filtered-employer-wrapper">
+                <div class="employer-view-controller-wrapper">
+                  <div class="employer-view-controller">
+                    <div class="controller list active">
+                      <i data-feather="menu"></i>
+                    </div>
+                    <div class="controller grid">
+                      <i data-feather="grid"></i>
+                    </div>
+                    <div class="employer-view-filter">
+                      <select class="selectpicker">
+                        <option value="" selected>Le plus récent</option>
+                        <option value="california">Top Rated</option>
+                        <option value="las-vegas">Most Popular</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="employer-filter-result">
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-1.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Theoreo Digital LTD</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Entreprise de logiciels</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>New York</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">Appliquer maintenant </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-2.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Realhouse Property</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Immobilier</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Washington, D.C.</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">Appliquer maintenant </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-3.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Degoin Art Institute</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Conception et Créatif</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>San Francisco</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">Appliquer maintenant </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-4.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Healthyeat Company</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Health &amp; Medicine</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>New York City</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">5 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-5.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Digoin Creative LTD</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Los Angeles</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">3 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-6.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Homolant Real Estate</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Seattle</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">6 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-7.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">IT Care Software LTD</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>New York City</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">12 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-10.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Doitco Bank</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Baltimore</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">9 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-8.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Designer Required </a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Washington, D.C.</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">12 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="employer">
+                    <div class="thumb">
+                      <a href="#">
+                        <img src="images/employer/thumb-9.png" class="img-fluid" alt="">
+                      </a>
+                    </div>
+                    <div class="body">
+                      <div class="content">
+                        <h4><a href="employer-details.html">Xzone Software Company</a></h4>
+                        <div class="info">
+                          <span class="company-category"><a href="#"><i data-feather="briefcase"></i>Real Estate</a></span>
+                          <span class="location"><a href="#"><i data-feather="map-pin"></i>Philadelphia</a></span>
+                        </div>
+                      </div>
+                      <div class="button-area">
+                        <a href="#">12 Open Positions</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pagination-list text-center">
+                  <nav class="navigation pagination">
+                    <div class="nav-links">
+                      <a class="prev page-numbers" href="#"><i class="fas fa-angle-left"></i></a>
+                      <a class="page-numbers" href="#">1</a>
+                      <span aria-current="page" class="page-numbers current">2</span>
+                      <a class="page-numbers" href="#">3</a>
+                      <a class="page-numbers" href="#">4</a>
+                      <a class="next page-numbers" href="#"><i class="fas fa-angle-right"></i></a>
+                    </div>
+                  </nav>                
+                </div>
+              </div>
+              <div class="employer-filter-wrapper">
+                <div class="selected-options same-pad">
+                  <div class="selection-title">
+                    <h4>You Selected</h4>
+                    <a href="#">Clear All</a>
+                  </div>
+                  <ul class="filtered-options">
+                  </ul>
+                </div>
+                <div class="employer-filter-dropdown same-pad category">
+                  <select class="selectpicker">
+                    <option value="" selected>Catégorie</option>
+                    <option value="california">Accounting / Finance</option>
+                    <option value="california">Education</option>
+                    <option value="california">Design &amp; Creative</option>
+                    <option value="california">Health Care</option>
+                    <option value="california">Engineer &amp; Architects</option>
+                    <option value="california">Marketing &amp; Sales</option>
+                    <option value="california">Garments / Textile</option>
+                    <option value="california">Customer Support</option>
+                    <option value="california">Digital Media</option>
+                    <option value="california">Telecommunication</option>
+                  </select>
+                </div>
+                <div class="employer-filter-dropdown same-pad location">
+                  <select class="selectpicker">
+                    <option value="" selected>Emplacement</option>
+                    <option value="california">Chicago</option>
+                    <option value="california">New York City</option>
+                    <option value="california">San Francisco</option>
+                    <option value="california">Washington</option>
+                    <option value="california">Boston</option>
+                    <option value="california">Los Angeles</option>
+                    <option value="california">Seattle</option>
+                    <option value="california">Las Vegas</option>
+                    <option value="california">San Diego</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Job Listing End -->
+
+   <div class="call-to-action-bg padding-top-90 padding-bottom-90">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="call-to-action-2">
+              <div class="call-to-action-content">
+                <h2>Trouver l'emploi ou le candidat de vos rêves</h2>
+                <p>Add resume or post a job. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec.</p>
+              </div>
+              <div class="call-to-action-button">
+                <a href="/register" class="button">Créez votre compte</a>
+                <span>Or</span>
+                <a href="/Travailleur/Publiez" class="button">Postulez annonce</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <!-- Call to Action End -->
+
+<!-- Footer -->
+<footer class="footer-bg">
+
+    <div class="footer-widget-wrapper padding-bottom-60 padding-top-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-sm-6">
+                    <div class="footer-widget footer-shortcut-link">
+                        <h4>Information</h4>
+                        <div class="widget-inner">
+                            <ul>
+                                <li><a href="#">A propos de nous</a></li>
+                                <li><a href="#">Contacter nous</a></li>
+                                <li><a href="#">Politique de confidentialité</a></li>
+                                <li><a href="#">Termes &amp; Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="footer-widget footer-shortcut-link">
+                        <h4>Travailleurs</h4>
+                        <div class="widget-inner">
+                            <ul>
+                                <li><a href="/Register">Créer un compte</a></li>
+                                <li><a href="/login">Déja un utilisateur ?</a></li>
+                                <li><a href="/Travailleur/Publier">Chercher Emploi</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="footer-widget footer-shortcut-link">
+                        <h4>Employeurs</h4>
+                        <div class="widget-inner">
+                            <ul>
+                                <li><a href="/Register">Créer un compte</a></li>
+                                <li><a href="/login">Déja un utilisateur ?</a></li>
+                                <li><a href="/Employeur/PublierOffre">Publier un offre</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="footer-bottom border-top">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-5 order-lg-2">
+
+                            </div>
+                            <div class="col-xl-4 col-lg-4 order-lg-1">
+                                <p class="copyright-text">Copyright <a href="#">MYJOBS</a> 2021, Tous droits réservés</p>
+                            </div>
+                            <div class="col-xl-4 col-lg-3 order-lg-3">
+                                <div class="back-to-top">
+                                    <a href="#">Retour au sommet<i class="fas fa-angle-up"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer End -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ asset('build/final/assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/feather.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/jquery.nstSlider.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/visible.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/jquery.countTo.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/chart.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/plyr.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/tinymce.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/slick.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/jquery.ajaxchimp.min.js') }}"></script>
+
+
+<script src="{{ asset('build/final/js/custom.js') }}"></script>
+<script src="{{ asset('build/final/dashboard/js/dashboard.js') }}"></script>
+<script src="{{ asset('build/final/dashboard/js/datePicker.js') }}"></script>
+<script src="{{ asset('build/final/dashboard/js/upload-input.js') }}"></script>
+
+
+
+
+</body>
+</html>

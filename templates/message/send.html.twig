@@ -1,0 +1,29 @@
+  
+{% extends 'base.html.twig' %}
+
+{% block title %}Messagerie
+{% endblock %}
+
+{% block body %}
+	<section class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Envoyer un message</h1>
+                {{ form(form) }}
+			</div>
+		</div>
+	</section>
+	
+		
+            <div>
+                <a href="{{ path("message") }}" class="list-group-item list-group-item-action">Accueil</a>
+            </div>
+            <div>
+                <a href="{{ path("message") }}" class="list-group-item list-group-item-action">Boîte de réception</a>
+            </div>
+            <div>
+                <a href="{{ path("message") }}" class="list-group-item list-group-item-action">Eléments envoyés</a>
+            </div>
+		</div>
+	
+{% endblock %}

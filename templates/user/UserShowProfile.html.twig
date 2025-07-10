@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>MYJOBS</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>MYJOBS</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/bootstrap.min.css') }}">
+
+
+    <!-- External Css -->
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/et-line.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/bootstrap-select.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/plyr.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/flag.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/jquery.nstSlider.min.css') }}">
+
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{{ asset('build/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/dashboard.css') }}">
+
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CRoboto:300i,400,500" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('build/final/images/favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('build/final/images/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('build/final/images/icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('build/final/images/icon-114x114.png') }}">
+
+</head>
+
+
+{% if app.user.roles[0] == 'ROLE_TRAVAILLEUR' %}
+
+
+  <header class="header-2">
+      <div class="container">
+          <div class="row">
+              <div class="col">
+                  <div class="header-top">
+                      <div class="logo-area">
+                          <a href="home"><img src="{{ asset('build/final/images/logo-2.png') }}" alt=""></a>
+                      </div>
+                      <div class="header-top-toggler">
+                          <div class="header-top-toggler-button"></div>
+                      </div>
+                      <div class="top-nav">
+                          <div class="dropdown header-top-account">
+                              <a href="#" class="account-button">My Account</a>
+                              <div class="account-card">
+                                  <div class="header-top-account-info">
+                                      <a href="#" class="account-thumb">
+                    <img src="  {{ asset("/uploads/images/products/#{app.user.getImage()}#")}}"class="img-fluid" alt="">
+                                      </a>
+                                      <div class="account-body">
+                                          <h5><a href="#">{{ app.user.firstname}} {{ app.user.lastname }}</a></h5>
+                                          <span class="mail">{{ app.user.email }}</span>
+                                      </div>
+                                  </div>
+                                  <ul class="account-item-list">
+                                      <li><a href="#"><span class="ti-user"></span>Compte</a></li>
+                                      <li><a href="{{ path('app_logout') }}"><span class="ti-power-off"></span>Déconnexion</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                <nav class="navbar navbar-expand-lg cp-nav-2">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="menu-item active"><a title="Home" href="home-1.html">Accueil</a></li>
+                            <li class="menu-item dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Offres de travail</a>
+                                <ul  class="dropdown-menu">
+                                    <li class="menu-item"><a  href="job-listing.html">Listes des offres</a></li>
+
+                                    <li class="menu-item"><a  href="post-job.html">Annonce de recherche de travail</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item dropdown">
+                                <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Travailleur</a>
+                                <ul  class="dropdown-menu">
+                                    <li class="menu-item"><a  href="add-resume.html">Ajouter CV</a></li>
+                                </ul>
+                            </li>
+
+
+
+                            <li class="menu-item dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard</a>
+                                <ul class="dropdown-menu">
+                                    <li class="menu-item"><a  href="/user">Dashboard</a></li>
+                                    <li class="menu-item"><a  href="/user/modifier">Modifier Profile</a></li>
+                                    <li class="menu-item"><a  href="add-resume.html">Modifier Societe</a></li>
+                                    <li class="menu-item"><a  href="resume.html">Societe</a></li>
+                                    <li class="menu-item"><a  href="dashboard-applied.html">Emplois postulés</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item dropdown">
+                                <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                <ul  class="dropdown-menu">
+                                    <li class="menu-item"><a href="about-us.html">À propos de nous</a></li>
+                                    <li class="menu-item"><a href="how-it-work.html">Comment ça fonctionne</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item post-job"><a href="post-job.html"><i class="fas fa-plus"></i>Publiez offre de travail</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+ {% else %}
+
+ <header class="header-2">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="header-top">
+                    <div class="logo-area">
+                        <a href="home"><img src="{{ asset('build/final/images/logo-2.png') }}" alt=""></a>
+                    </div>
+                    <div class="header-top-toggler">
+                        <div class="header-top-toggler-button"></div>
+                    </div>
+                    <div class="top-nav">
+                        <div class="dropdown header-top-account">
+                            <a href="#" class="account-button">Mon compte</a>
+                            <div class="account-card">
+                                <div class="header-top-account-info">
+                                    <a href="#" class="account-thumb">
+                                        <img src="{{ asset("build/final/images/account/thumb-1.jpg") }}" class="img-fluid" alt="">
+                                    </a>
+                                    <div class="account-body">
+                                        <h5><a href="#">{{ app.user.firstname}} {{ app.user.lastname }}</a></h5>
+                                        <span class="mail">{{ app.user.email }}</span>
+                                    </div>
+                                </div>
+                                <ul class="account-item-list">
+                                    <li><a href="#"><span class="ti-user"></span>Compte</a></li>
+                                    <li><a href="{{ path('app_logout') }}"><span class="ti-power-off"></span>Déconnexion</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-expand-lg cp-nav-2">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="menu-item active"><a title="Home" href="home-1.html">Accueil</a></li>
+                            <li class="menu-item dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Offres de travail</a>
+                                <ul  class="dropdown-menu">
+                                    <li class="menu-item"><a  href="job-listing.html">Recherche annonces</a></li>
+
+                                    <li class="menu-item"><a  href="post-job.html">Publier offre</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item dropdown">
+                                <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Employeur</a>
+                                <ul  class="dropdown-menu">
+                                    <li class="menu-item"><a  href="/Employeur/ModifierSociete">Modifier Société</a></li>
+                                </ul>
+                            </li>
+
+
+
+                            <li class="menu-item dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard</a>
+                                <ul class="dropdown-menu">
+                              
+                                    <li class="menu-item"><a  href="/Employeur/modifier">Modifier Profile</a></li>
+                                    <li class="menu-item"><a  href="/Employeur/ModifierSociete">Modifier Societe</a></li>
+                                    <li class="menu-item"><a  href="/Employeur/Societe">Societe</a></li>
+                                    <li class="menu-item"><a  href="/Employeur/GererEmploi">Mes annonces</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item dropdown">
+                                <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                <ul  class="dropdown-menu">
+                                    <li class="menu-item"><a href="about-us.html">À propos de nous</a></li>
+                                    <li class="menu-item"><a href="how-it-work.html">Comment ça fonctionne</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item post-job"><a href="/Employeur/PublierOffre"><i class="fas fa-plus"></i>Publiez offre de travail</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endif %}
+
+{% if user.roles[0] == 'ROLE_TRAVAILLEUR' %}
+
+<div class="alice-bg padding-top-60 section-padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="candidate-details">
+              <div class="title-and-info">
+                <div class="title">
+                  <div class="thumb">
+                    <img src="  {{ asset("/uploads/images/products/#{user.getImage()}#")}}"class="img-fluid" alt="">
+                  </div>
+                  <div class="title-body">
+                    <h4>{{user.firstname}}</h4>
+                    <div class="info">
+                      <span class="candidate-designation"><i data-feather="check-square"></i>{{user.job}}</span>
+                      <span class="candidate-location"><i data-feather="map-pin"></i>{{user.city}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-and-profile">
+                <div class="skill">
+              
+                </div>
+                <div class="social-profile">
+                  <label>Social:</label>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-google-plus"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                  <a href="#"><i class="fab fa-behance"></i></a>
+                  <a href="#"><i class="fab fa-dribbble"></i></a>
+                  <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+              <div class="details-information section-padding-60">
+                <div class="row">
+                  <div class="col-xl-7 col-lg-8">
+                    <div class="about-details details-section">
+                      <h4><i data-feather="align-left"></i>A propos de moi</h4>
+                      {{user.bio}}
+                    </div>
+                    <div class="edication-background details-section">
+                      <h4><i data-feather="book"></i>Education</h4>
+                      {% if user.titre1 is null %}
+
+                            <h3>Cette Section est vide <h3>
+                         {% else %}
+                                <div class="education-label">
+                                    <span class="study-year">{{ user.periode1 }}</span>
+                                    <h5>{{ user.titre1 }}<span>@ {{ user.institut1 }}</span></h5>
+                                    <p>{{ user.description1 }}</p>
+                                </div>
+                           {% endif %}
+
+                           {% if user.titre2 is null %}
+
+                         {% else %}
+                                <div class="education-label">
+                                    <span class="study-year">{{ user.periode2 }}</span>
+                                    <h5>{{ user.titre2 }}<span>@ {{ user.institut2 }}</span></h5>
+                                    <p>{{ user.description1 }}</p>
+                                </div>
+                           {% endif %}
+                    </div>
+                    <div class="experience details-section">
+                      <h4><i data-feather="briefcase"></i>Experience de travail</h4>
+                      
+                      {% if user.work1 is null %}
+
+                            <h3>Cette Section est vide <h3>
+                         {% else %}
+                                <div class="experience-section">
+                                    <span class="service-year">{{ user.workperiod1 }}</span>
+                                    <h5>{{ user.work1 }}<span>@ {{ user.company1 }}</span></h5>
+                                    <p>{{ user.workdescription1 }}</p>
+                                </div>
+                            {% endif %}
+
+                            {% if user.work2 is null %}
+
+                          {% else %}
+
+                                <div class="experience-section">
+                                    <span class="service-year">{{ user.workperiod2 }}</span>
+                                    <h5>{{ user.work2 }}<span>@ {{ user.company2 }}</span></h5>
+                                    <p>{{ user.workdescription2 }}</p>
+                                </div>
+                            {% endif %}
+
+                    </div>
+                    
+                    <div class="special-qualification details-section">
+                      <h4><i data-feather="gift"></i>Qualifications spéciales</h4>
+                      <ul>
+                        {% if app.user.qualification1 is null %}
+
+                            <h3>Cette Section est vide <h3>
+                         {% else %}                           
+                             <ul>
+                                <li>{{app.user.qualification1}}</li>
+                                <li>{{app.user.qualification2}}</li>
+                                <li>{{app.user.qualification3}}</li>
+                                <li>{{app.user.qualification4}}</li>
+                            </ul>
+                            {% endif %}
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 offset-xl-1 col-lg-4">
+                    <div class="information-and-contact">
+                      <div class="information">
+                        <h4>Informations</h4>
+                        <ul>
+                          <li><span>Domaine:</span> {{user.job}}</li>
+                                            <li><span>Adresse:</span> {{ user.city }}</li>
+                                            <li><span>Etat:</span> {{ user.etat }}</li>
+                                            <li><span>Experience:</span> {{user.exp}} Années</li>
+                                            <li><span>Sex:</span> {{ user.sex }}</li>
+                                            <li><span>Qualifications:</span> {{ user.qualification }}</li>
+                        </ul>
+                      </div>
+                      <div class="buttons">
+                        <a href="#" class="button contact-button" data-toggle="modal" data-target="#exampleModal">Contact Me</a>
+
+                      </div>
+                      <!-- Modal -->
+                      <div class="modal fade contact-form-modal" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                              <h4><i data-feather="edit"></i>Contact Me</h4>
+                              <form action="#">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Your Name">
+                                </div>
+                                <div class="form-group">
+                                  <input type="email" class="form-control" placeholder="Your Email">
+                                </div>
+                                <div class="form-group">
+                                  <textarea class="form-control" placeholder="Your Message"></textarea>
+                                </div>
+                                <button class="button">Submit</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Candidates Details End -->
+
+    {% else %}
+
+    <div class="alice-bg padding-top-60 section-padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="company-details">
+              <div class="title-and-info">
+                <div class="title">
+                  <div class="thumb">
+                    <img src="  {{ asset("/uploads/images/products/#{user.getImage()}#")}}"class="img-fluid" alt="">
+                  </div>
+                  <div class="title-body">
+                    <h4>{{user.societe}}</h4>
+                    <div class="info">
+                      <span class="company-type"><i data-feather="briefcase"></i>{{user.job}}</span>
+                      <span class="office-location"><i data-feather="map-pin"></i>{{user.city}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="details-information padding-top-60">
+                <div class="row">
+                  <div class="col-xl-7 col-lg-8">
+                    <div class="about-details details-section">
+                      <h4><i data-feather="align-left"></i>A propos de nous</h4>
+                      {{user.bio}}
+                    </div>
+                    <div class="intor-video details-section">
+                      <h4><i data-feather="video"></i>Intro Video</h4>
+
+                            {% if user.video != null %}
+                                <div class="education-label">
+                                {% set videolink ='app.user.video' %}
+                                      <iframe width="580" height="360" src=videolink frameborder="0" allowfullscreen></iframe>
+                                </div>
+
+                            {% endif %}
+                      
+                    </div>
+               
+                    <div class="open-job details-section">
+                      <h4><i data-feather="check-circle"></i>Liste des offre d'emploi</h4>
+                   {% for annonces in user.annonces %}
+                      <div class="job-list">
+                        <div class="body">
+                          <div class="content">
+                          <h4><a href="{{ path('annonce_show', {id: annonces.id}) }}">{{annonces.titre}}</a></h4>
+                            <div class="info">
+                            <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{annonces.city}}</a></span>
+                            <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>{{annonces.type}}</a></span>
+                            </div>
+                          </div>
+                          <div class="more">
+                            <div class="buttons">
+                              <a href="#" class="button">Apply Now</a>
+                              <a href="#" class="favourite"><i data-feather="heart"></i></a>
+                            </div>
+                            <p class="deadline">{{annonces.expire|date('d-m-Y')}}</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {% endfor %}
+                    </div>
+                  </div>
+                  <div class="col-xl-4 offset-xl-1 col-lg-4">
+                    <div class="information-and-contact">
+                      <div class="information">
+                        <h4>Information</h4>
+                        <ul>
+                          <li><span>Nom Sociéte: </span> {{app.user.societe}}</li>
+                                            <li><span>Domaine:</span> {{app.user.job}}</li>
+                                            <li><span>Adresse:</span> {{ app.user.city }}</li>
+                                            <li><span>Télephone:</span> {{ app.user.numTel }}</li>
+                                            <li><span>Email:</span> {{ app.user.email }}</li>
+                                            <li><span>Site Web :</span> <a>{{app.user.siteweb}}</a></li>
+                        </ul>
+                      </div>
+                      <div class="buttons">
+                        <a href="#" class="button contact-button" data-toggle="modal" data-target="#exampleModal">Contact Us</a>
+                      </div>
+                      <!-- Modal -->
+                      <div class="modal fade contact-form-modal" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                              <h4><i data-feather="edit"></i>Contact Us</h4>
+                              <form action="#">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Your Name">
+                                </div>
+                                <div class="form-group">
+                                  <input type="email" class="form-control" placeholder="Your Email">
+                                </div>
+                                <div class="form-group">
+                                  <textarea class="form-control" placeholder="Your Message"></textarea>
+                                </div>
+                                <button class="button">Submit</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="share-job-post">
+                      <span class="share">Social Profile:</span>
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                      <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endif %}
+
+
+
+<!-- Footer -->
+<footer class="footer-bg">
+
+    <div class="footer-widget-wrapper padding-bottom-60 padding-top-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-sm-6">
+                    <div class="footer-widget footer-shortcut-link">
+                        <h4>Information</h4>
+                        <div class="widget-inner">
+                            <ul>
+                                <li><a href="#">A propos de nous</a></li>
+                                <li><a href="#">Contacter nous</a></li>
+                                <li><a href="#">Politique de confidentialité</a></li>
+                                <li><a href="#">Termes &amp; Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="footer-widget footer-shortcut-link">
+                        <h4>Travailleurs</h4>
+                        <div class="widget-inner">
+                            <ul>
+                                <li><a href="/Register">Créer un compte</a></li>
+                                <li><a href="/login">Déja un utilisateur ?</a></li>
+                                <li><a href="/Travailleur/Publier">Chercher Emploi</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="footer-widget footer-shortcut-link">
+                        <h4>Employeurs</h4>
+                        <div class="widget-inner">
+                            <ul>
+                                <li><a href="/Register">Créer un compte</a></li>
+                                <li><a href="/login">Déja un utilisateur ?</a></li>
+                                <li><a href="/Employeur/PublierOffre">Publier un offre</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="footer-bottom border-top">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-5 order-lg-2">
+
+                            </div>
+                            <div class="col-xl-4 col-lg-4 order-lg-1">
+                                <p class="copyright-text">Copyright <a href="#">MYJOBS</a> 2021, Tous droits réservés</p>
+                            </div>
+                            <div class="col-xl-4 col-lg-3 order-lg-3">
+                                <div class="back-to-top">
+                                    <a href="#">Retour au sommet<i class="fas fa-angle-up"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer End -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ asset('build/final/assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/feather.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/jquery.nstSlider.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/visible.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/jquery.countTo.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/chart.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/plyr.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/tinymce.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/slick.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/jquery.ajaxchimp.min.js') }}"></script>
+
+
+<script src="{{ asset('build/final/js/custom.js') }}"></script>
+<script src="{{ asset('build/final/dashboard/js/dashboard.js') }}"></script>
+<script src="{{ asset('build/final/dashboard/js/datePicker.js') }}"></script>
+<script src="{{ asset('build/final/dashboard/js/upload-input.js') }}"></script>
+
+
+
+
+</body>
+</html>

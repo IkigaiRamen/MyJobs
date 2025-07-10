@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Annonces!{% endblock %}
+
+{% block body %}
+
+
+
+{% for annonces in app.user.annonces %}
+    
+     <h2>
+                <a href="{{ path('Myannonce_show', {id: annonces.id}) }}">
+                    {{ annonces.titre }}
+                </a>
+            </h2>
+   
+
+{% endfor %}
+
+{% endblock %}

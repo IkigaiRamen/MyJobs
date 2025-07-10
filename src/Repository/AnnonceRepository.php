@@ -19,6 +19,66 @@ class AnnonceRepository extends ServiceEntityRepository
         parent::__construct($registry, Annonce::class);
     }
 
+    public function findOneByCityandExp($city,$exp,$type,$sex,$qualification,$categorie): array
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.city = :cit')
+            ->setParameter('cit', $city)
+            ->andWhere('a.exp = :ex')
+            ->setParameter('ex', $exp)
+            ->andWhere('a.type = :t')
+            ->setParameter('t', $type)
+            ->andWhere('a.sex = :s')
+            ->setParameter('s', $sex)
+            ->andWhere('a.qualification = :q')
+            ->setParameter('q', $qualification)
+            ->andWhere('a.categorie = :c')
+            ->setParameter('c', $categorie)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findbyTitre($titre): array
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.titre = :tit')
+            ->setParameter('tit', $titre)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+   
+    
+
+    public function findOneByDate($date): array
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.expire > :cit')
+            ->setParameter('cit', $date)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+
+    public function findExactDemandeDemploi($sex,$exp,$categorie): array
+    {
+        //$r = '["ROLE_TRAVAILLEUR"]';
+        return $this->createQueryBuilder('a')
+        ->andWhere('a.sex = :s')
+        ->setParameter('s', $sex)
+        ->andWhere('a.exp = :ex')
+        ->setParameter('ex', $exp)
+        ->andWhere('a.categorie = :a')
+        ->setParameter('a', $categorie)
+        ->getQuery()
+        ->getResult()
+    ;
+        
+    }
+
     // /**
     //  * @return Annonce[] Returns an array of Annonce objects
     //  */
@@ -47,4 +107,7 @@ class AnnonceRepository extends ServiceEntityRepository
         ;
     }
     */
+
+   
+
 }

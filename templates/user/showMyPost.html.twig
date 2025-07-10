@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+<h2> {{annonce.titre}} </h2>
+<h2> {{annonce.description}} </h2>
+<h2> {{annonce.salairemin}} {{annonce.salairemax}} </h2>
+<h2> {{annonce.categorie}} </h2>
+<h2> {{annonce.qualification}} </h2>
+<h2> {{annonce.sex}} </h2>
+<h2> {{annonce.eduexp}} </h2>
+<h2> {{annonce.country}} </h2>
+<h2> {{annonce.city}} </h2>
+
+<h2>People who applied to this job</h2>
+{% for apply in annonce.apply %}
+
+<h2>
+                <a href="{{ path('user_show', {id: apply.UserId}) }}">
+                   <li>{{apply}}</li>
+                </a>
+            </h2>
+            
+        {% endfor %}
+
+<h2>Exact Match</h2>
+      
+      {% for annoncex in annoncex %}
+
+  <h2>
+                
+                    <h2>
+                <a href="{{ path('annonce_show', {id: annoncex.id}) }}">
+                    {{ annoncex.titre }}
+                </a>
+            </h2>
+               
+            </h2>
+   {% endfor %}
+
+
+    
+
+
+<h2> Modifier </h2>
+{{ form(form)}}
+
+
+
+{% endblock %}

@@ -1,155 +1,150 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<script class="u-script" type="text/javascript" src="{{ asset('build/homepage.js') }}" defer=""></script>
 
 
-<link rel="stylesheet" href="{{ asset('build/signlogin.css') }} ">
-<link rel="stylesheet" href="{{ asset('build/homepage.css') }} ">
+<!doctype html>
+<html lang="en">
+<head>
 
-<link rel="stylesheet" href="https://cdn.lineicons.com/1.0.0/LineIcons.min.css">
-<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block body %}
-    <header class="u-clearfix u-header u-header" id="sec-cc63"><div class="u-clearfix u-sheet u-sheet-1">
-            <a class="u-image u-logo u-image-1">
-                <img src="{{asset('build/images/default-logo.png')}}"  class="u-logo-image u-logo-image-1">
-            </a>
-            <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-                <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-                    <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-                                </symbol>
-                            </defs></svg>
-                    </a>
-                </div>
-                <div class="u-custom-menu u-nav-container">
-                    <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">Acceuil</a>
-                        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Informations.html" style="padding: 10px 20px;">Informations</a>
-                        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="login" style="padding: 10px 20px;">Connexion-Inscription</a>
-                        </li></ul>
-                </div>
-                <div class="u-custom-menu u-nav-container-collapse">
-                    <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-                        <div class="u-sidenav-overflow">
-                            <div class="u-menu-close"></div>
-                            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/" style="padding: 10px 20px;">Acceuil</a>
-                                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Informations.html" style="padding: 10px 20px;">Informations</a>
-                                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="login" style="padding: 10px 20px;">Connexion-Inscription</a>
-                                </li></ul>
-                        </div>
+    <title>MYJOBS</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>MYJOBS</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/bootstrap.min.css') }}">
+
+
+    <!-- External Css -->
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/et-line.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/bootstrap-select.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/plyr.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/flag.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/final/assets/css/jquery.nstSlider.min.css') }}">
+
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{{ asset('build/main.css') }}">
+
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CRoboto:300i,400,500" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('build/final/images/favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('build/final/images/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('build/final/images/icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('build/final/images/icon-114x114.png') }}">
+</head>
+<body>
+
+<header class="header-2 access-page-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="header-top">
+                    <div class="logo-area">
+                        <a href="/home"><img src="{{ asset('build/final/images/logo-2.png') }}" alt=""></a>
                     </div>
-                    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-                </div>
-            </nav>
-        </div></header>
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
-    <div class="container-fluid bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ">
-                    <div class="row">
-                        <div class="col-sm-3 col-md-2 col-lg-2">
-                            <i class="lni lni-enter" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="col-sm-9 col-md-10 col-lg-10">
-                            <h1 class="heading">Inscription</h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-3 col-md-2 col-lg-2">
-                            <i class="lni lni-user" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="col-sm-9 col-md-10 col-lg-10">
-                            <h1 class="heading">Créer votre profile</h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-3 col-md-2 col-lg-2">
-                            <i class="lni lni-cloud-upload" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="col-sm-9 col-md-10 col-lg-10">
-                            <h1 class="heading">Télécharger vos documents</h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-3 col-md-2 col-lg-2">
-                            <i class="lni lni-search" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="col-sm-9 col-md-10 col-lg-10">
-                            <h1 class="heading">Chercher emploi</h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card regform wow bounce animated" data-wow-delay="0.05s">
-                        <div class="card-body regform">
-                            <div class="myform form ">
-                                <div class="logo mb-3">
-                                    <div class="col-md-12 text-center">
-                                        <h1 class="sign">Inscription</h1>
-                                    </div>
-                                </div>
-                                {{ form_start(registrationForm) }}
-
-
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1"> {{ form_row(registrationForm.email) }}</label>
-
-                                </div>
-                                <div class="form-group">
-                                    {{ form_row(registrationForm.plainPassword, {
-                                        label: 'Mot de passe'
-                                    }) }}
-                                </div>
-                                {{ form_row(registrationForm.agreeTerms) }}
-
-                                <div class="col-md-12 text-center mb-3">
-                                    <button class="btn btn-lg btn-primary" type="submit">Inscription</button>
-                                </div>
-                                {{ form_end(registrationForm) }}
-
-                                <div class="col-md-12 ">
-                                    <div class="form-group">
-                                        <p class="text-center"><a href="/login" id="signin">Vous avez un compte déja ?</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="top-nav">
+                        <a href="/login" class="account-page-link">Connexion</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</header>
+
+<div class="padding-top-90 padding-bottom-90 access-page-bg">
+    {{ form_start(registrationForm) }}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-md-6">
+                <div class="access-form">
+                    <div class="form-header">
+                        <h5><i data-feather="edit"></i>Créer un compte</h5>
+                    </div>
+                    <div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form_widget(registrationForm.roles, {'attr': {'class': 'form-control' , 'placeholder': 'Sélectionner catégorie' } }) }}
+                            </div>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                                {{ form_widget(registrationForm.username, {'attr': {'class': 'form-control' ,'placeholder': 'Nom d utilisateur'}}) }}
+
+                        </div>
+                        <div class="form-group">
+                            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control' ,'placeholder': 'Adresse email'}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control' ,'placeholder': 'Mot de passe'}}) }}
+
+
+                        </div>
+                        <div class="more-option terms">
+                            <div class="mt-0 terms">
+                                {{ form_widget(registrationForm.agreeTerms)}}
+
+                                <label for="radio-4">
+                                    <span class="dot"></span> J'accepte les termes et conditions</a>
+                                </label>
+                            </div>
+                        </div>
+                    <button type="submit" class="button primary-bg btn-block">S'inscrire</button>
+                    {{ form_end(registrationForm) }}
+                    <div class="shortcut-login">
+                        <p>Vous étes déja inscrit? <a href="/login">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ asset('build/final/assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/feather.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/jquery.nstSlider.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/visible.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/jquery.countTo.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/chart.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/plyr.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/tinymce.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/slick.min.js') }}"></script>
+<script src="{{ asset('build/final/assets/js/jquery.ajaxchimp.min.js') }}"></script>
+
+
+<script src="{{ asset('build/final/js/custom.js') }}"></script>
+<script src="{{ asset('build/final/dashboard/js/dashboard.js') }}"></script>
+<script src="{{ asset('build/final/dashboard/js/datePicker.js') }}"></script>
+<script src="{{ asset('build/final/dashboard/js/upload-input.js') }}"></script>
 
 
 
 
-{% endblock %}
-
-
-
-
-
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>
+<script src="{{ asset('build/final/js/map.js') }}"></script>
+</body>
+</html>
 
 
 
